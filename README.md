@@ -85,3 +85,68 @@
  
  > https://github.com/airbnb/javascript
  
+ <hr>
+ 
+<b> ส่วนนี้จะเป็นส่วนที่ผมได้รวบรวมวิธีแก้เอาไว้ </b>
+
+<h2>1. Unexpected dangling '_' in '__INITIAL_STATE__'                               no-underscore-dangle 
+
+</h2>
+
+วิธีแก้ 
+ให้นำ
+> /* eslint no-underscore-dangle: 0 */
+
+ไปวางบนบรรทัดที่เราใช้ _
+ 
+<h2>2. error  JSX not allowed in files with extension '.js'  react/jsx-filename-extension
+
+</h2>
+วิธีแก้
+ให้นำ 
+<pre> 
+
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    }
+
+</pre>
+
+ไปวางในไฟล์ config ของ ESlint
+
+<h2>3. error  'document' is not defined                      no-undef
+   error  'window' is not defined                        no-undef
+  
+</h2>
+ วิธีแก้
+ ให้นำ
+ 
+ <pre>
+ 
+    "env": {
+        "browser": true,
+        "node": true
+    }
+ 
+ </pre>
+ 
+ ไปวางในไฟล์ config ของ ESlint
+ 
+<h2> 4. error  Parsing error: Unexpected character '@'
+
+</h2>
+วิธีแก้
+
+ให้เพิ่ม dependency ดังนี้ 
+
+> yarn add babel-eslint --dev
+
+จากนั้นเอา
+
+<pre>
+
+"parser": "babel-eslint",
+
+</pre>
+
+ไปเพิ่มในไฟล์ config ของ ESlint
